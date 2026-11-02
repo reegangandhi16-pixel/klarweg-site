@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /audit/
+Disallow: /report/
+Disallow: /uploads/
+Disallow: /deliverables/
+Disallow: /deployment/
+Disallow: /scripts/
+Disallow: /access/
+Disallow: /app/
+Disallow: /lib/
+Disallow: /react-lib/
+Disallow: /audio-manifests/
+Disallow: /content/
+Disallow: /screenshots/
+
+Sitemap: https://klarweg.in/sitemap.xml

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<!-- Content-Security-Policy: no inline scripts, styles or eval; only the site, Google Fonts and the Klarweg API. connect-src is the page's own
+     origin only: on klarweg.in the API is same-origin under /api (OD-20). blob: = the page's own
+     recordings (no outside data). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' blob:; connect-src 'self' blob:; base-uri 'none'; form-action 'none'; object-src 'none'">
+<!-- API base (klarweg-access). Empty = same origin (dev server). Access to every rating route is enforced by the exam Worker (rater / lead_rater role). -->
+<meta name="kw-exam-api" content="">
+<title>Klarweg Bewertung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="exam.css">
+</head>
+<body>
+<a class="kx-skip" href="#kx-app">Zum Inhalt springen</a>
+<div id="kx-app" class="kx-app"><main class="kx-card"><h1>Bewertung</h1><p>Wird geladen …</p></main></div>
+<noscript><p class="kx-card">Für die Bewertung wird JavaScript benötigt.</p></noscript>
+<script type="module" src="js/rater.js"></script>
+</body>
+</html>

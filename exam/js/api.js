@@ -1,0 +1,121 @@
+/* Exam API client (/exam/v1 via klarweg-access). Every mutating call carries
+   a request id that is REUSED on network retry, so the server applies it once
+   and replays its stored answer. Errors surface as ExamApiError(code). */
+import { randomId } from './ids.js';
+
+export class ExamApiError extends Error {
+  constructor(status, code, body) { super(code); this.status = status; this.code = code; this.body = body || {}; }
+}
+
+/* Where the exam API lives. An explicit <meta name="kw-exam-api"> wins. On klarweg.in the Access Worker answers under
+   /api (Cloudflare route klarweg.in/api/*, prefix stripped by the Worker), so calls stay same-origin and the
+   first-party session cookie (Path=/api) is sent. Anywhere else (local dev server, tests) the API is the page's own
+   origin. */
+export const SITE_HOSTS = ['klarweg.in', 'www.klarweg.in'];
+export function resolveApiBase(meta, hostname) {
+  if (meta) return meta;
+  return SITE_HOSTS.includes(hostname) ? '/api' : '';
+}
+
+export function createApi({ base, fetchImpl = (...a) => fetch(...a), clock, retries = 3, backoffMs = 400, sleep = (ms) => new Promise((r) => setTimeout(r, ms)) }) {
+  async function once(method, path, { body, raw, contentType, keepalive } = {}) {
+    const init = { method, credentials: 'include', headers: {} };
+    if (keepalive) init.keepalive = true;   // survives page unload (Hören interruption report)
+    if (raw) { init.body = raw; init.headers['content-type'] = contentType; }
+    else if (body !== undefined) { init.body = JSON.stringify(body); init.headers['content-type'] = 'application/json'; }
+    const sent = Date.now();
+    const res = await fetchImpl(base + path, init);
+    const received = Date.now();
+    let json = null;
+    try { json = await res.json(); } catch { /* non-JSON */ }
+    if (clock && json && Number.isFinite(json.server_now)) clock.sample(sent, received, json.server_now);
+    if (!res.ok) throw new ExamApiError(res.status, (json && json.error) || 'http_' + res.status, json);
+    return json;
+  }
+  async function call(method, path, opts = {}) {
+    let last;
+    for (let i = 0; i <= retries; i++) {
+      try { return await once(method, path, opts); } catch (e) {
+        last = e;
+        const transient = !(e instanceof ExamApiError) || e.status >= 500 || e.status === 429;
+        if (!transient || i === retries) throw e;
+        await sleep(backoffMs * 2 ** i);
+      }
+    }
+    throw last;
+  }
+  const att = (id, p = '') => `/exam/v1/attempts/${id}${p}`;
+  const rq = (body = {}) => ({ request_id: body.request_id || randomId('rq'), ...body });
+  return {
+    call,
+    /* Second factor for raters/admins (OD-19), served by klarweg-access itself. Writes are never retried: a retried
+       code would be refused as a replay. */
+    /* Third-party-cookie pre-flight (until the same-site domain, OD-20): true = cookies reach the exam server,
+       false = the browser blocks them, null = could not tell (no probe endpoint, offline). Never throws. */
+    async cookieCheck() {
+      try { await once('POST', '/auth/cookie-probe', { body: {} }); const r = await once('GET', '/auth/cookie-probe'); return r && typeof r.received === 'boolean' ? r.received : null; }
+      catch { return null; }
+    },
+    mfaStatus: () => call('GET', '/auth/mfa/status'),
+    mfaEnroll: () => once('POST', '/auth/mfa/enroll', { body: {} }),
+    mfaConfirm: (code) => once('POST', '/auth/mfa/enroll/confirm', { body: { code } }),
+    mfaVerify: (b) => once('POST', '/auth/mfa/verify', { body: b }),
+    /* exam-access management (exam_admin, OD-18). Writes are never retried automatically: the server refuses a
+       duplicate grant / second revoke (409), and the page reloads the list instead. */
+    accessLookup: (email) => once('POST', '/exam/v1/admin/access/lookup', { body: { email } }),   // resolved by klarweg-access; not retried (rate-limited)
+    accessInspect: (userId) => call('GET', `/exam/v1/admin/access?user_id=${encodeURIComponent(userId)}`),
+    accessGrant: (b) => once('POST', '/exam/v1/admin/access/grants', { body: b }),
+    formUsage: () => call('GET', '/exam/v1/admin/forms/usage'),   // aggregates only; audited per call
+    adminAttempts: (userId) => call('GET', `/exam/v1/admin/attempts?user_id=${encodeURIComponent(userId)}`),   // read-only; audited per call
+    accommodationInspect: (userId) => call('GET', `/exam/v1/admin/accommodations?user_id=${encodeURIComponent(userId)}`),
+    accommodationSet: (b) => once('POST', '/exam/v1/admin/accommodations', { body: b }),
+    accommodationRemove: (userId, reason) => once('POST', '/exam/v1/admin/accommodations/remove', { body: { user_id: userId, reason } }),
+    accessRevoke: (grantId, reason) => once('POST', `/exam/v1/admin/access/grants/${encodeURIComponent(grantId)}/revoke`, { body: { reason } }),
+    availability: () => call('GET', '/exam/v1/availability'),
+    createAttempt: (b) => call('POST', '/exam/v1/attempts', { body: rq(b) }),
+    getAttempt: (id) => call('GET', att(id)),
+    lease: (id, deviceId, takeover = false) => call('POST', att(id, '/lease'), { body: { device_id: deviceId, takeover } }),
+    heartbeat: (id, leaseId) => call('POST', att(id, '/heartbeat'), { body: { lease_id: leaseId } }),
+    start: (id, leaseId, module) => call('POST', att(id, `/modules/${module}/start`), { body: rq({ lease_id: leaseId }) }),
+    pkg: (id, leaseId, module) => call('GET', att(id, `/modules/${module}/package?lease_id=${encodeURIComponent(leaseId)}`)),
+    answers: (id, leaseId, module) => call('GET', att(id, `/modules/${module}/answers?lease_id=${encodeURIComponent(leaseId)}`)),
+    save: (id, leaseId, module, answers, requestId, { keepalive = false } = {}) => call('POST', att(id, `/modules/${module}/answers`), { body: rq({ lease_id: leaseId, answers, request_id: requestId }), keepalive }),
+    submit: (id, leaseId, module) => call('POST', att(id, `/modules/${module}/submit`), { body: rq({ lease_id: leaseId }) }),
+    hoerenEvent: (id, leaseId, ev, { keepalive = false } = {}) => keepalive
+      ? once('POST', att(id, '/hoeren/events'), { body: rq({ lease_id: leaseId, ...ev }), keepalive: true })
+      : call('POST', att(id, '/hoeren/events'), { body: rq({ lease_id: leaseId, ...ev }) }),
+    media: (id, leaseId, assetId) => call('POST', att(id, '/media'), { body: { lease_id: leaseId, asset_id: assetId } }),
+    consent: (id, leaseId, version) => call('POST', att(id, '/sprechen/consent'), { body: rq({ lease_id: leaseId, granted: true, version }) }),
+    chunk: (id, leaseId, q, bytes, mime) => call('POST', att(id, `/sprechen/chunks?${new URLSearchParams({ lease_id: leaseId, ...q })}`), { raw: bytes, contentType: mime }),
+    turn: (id, leaseId, b) => call('POST', att(id, '/sprechen/turns'), { body: rq({ lease_id: leaseId, ...b }) }),
+    speakingStatus: (id, leaseId) => call('GET', att(id, `/sprechen/status?lease_id=${encodeURIComponent(leaseId)}`)),
+    integrity: (id, leaseId, b) => once('POST', att(id, '/schreiben/integrity'), { body: { lease_id: leaseId, ...b } }),   // best effort, never retried
+    complete: (id, leaseId) => call('POST', att(id, '/complete'), { body: rq({ lease_id: leaseId }) }),
+    result: (id) => call('GET', att(id, '/result')),
+    review: (id, module) => call('GET', att(id, `/modules/${module}/review`)),
+    feedback: (id, module) => call('GET', att(id, `/modules/${module}/feedback`)),
+    myRecordings: (id) => call('GET', att(id, '/sprechen/recordings')),
+    myAttempts: () => call('GET', '/exam/v1/attempts'),
+    async myRecording(id, part, turn) {   // the learner's own recording after submission: audio bytes, session-bound
+      const res = await fetchImpl(`${base}${att(id, `/sprechen/recordings/${part}/${turn}`)}`, { credentials: 'include' });
+      if (!res.ok) { let j = null; try { j = await res.json(); } catch { /* non-JSON */ } throw new ExamApiError(res.status, (j && j.error) || 'http_' + res.status, j); }
+      return res.blob();
+    },
+    // staff (rater / lead_rater): authorization is enforced by the server; the browser carries no token or secret
+    ratingQueue: () => call('GET', '/exam/v1/admin/rating-queue'),
+    ratingDisagreements: () => call('GET', '/exam/v1/admin/rating-disagreements'),
+    reviewDisagreement: (key, note) => once('POST', '/exam/v1/admin/rating-disagreements/review', { body: { key, note } }),
+    productive: (id) => call('GET', `/exam/v1/admin/attempts/${id}/productive`),
+    async recording(id, part, turn) {   // rater playback: audio bytes, session-bound (no URL token)
+      const res = await fetchImpl(`${base}/exam/v1/admin/attempts/${id}/recordings/${part}/${turn}`, { credentials: 'include' });
+      if (!res.ok) { let j = null; try { j = await res.json(); } catch { /* non-JSON */ } throw new ExamApiError(res.status, (j && j.error) || 'http_' + res.status, j); }
+      return res.blob();
+    },
+    rate: (body) => once('POST', '/exam/v1/admin/ratings', { body }),   // not retried: a lost response must not turn into a second rating
+    mediaBytes: async (url, { signal } = {}) => {
+      const res = await fetchImpl(base + url, { credentials: 'omit', ...(signal ? { signal } : {}) });
+      if (!res.ok) throw new ExamApiError(res.status, 'media_' + res.status);
+      return res.arrayBuffer();
+    }
+  };
+}

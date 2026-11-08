@@ -6,457 +6,457 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/about.html</loc>
+    <loc>https://klarweg.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/courses.html</loc>
+    <loc>https://klarweg.in/courses</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/live-classes.html</loc>
+    <loc>https://klarweg.in/live-classes</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe-exam.html</loc>
+    <loc>https://klarweg.in/goethe-exam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/ausbildung.html</loc>
+    <loc>https://klarweg.in/ausbildung</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/resources.html</loc>
+    <loc>https://klarweg.in/resources</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/contact.html</loc>
+    <loc>https://klarweg.in/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/privacy.html</loc>
+    <loc>https://klarweg.in/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/terms.html</loc>
+    <loc>https://klarweg.in/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/refund-policy.html</loc>
+    <loc>https://klarweg.in/refund-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/a1.html</loc>
+    <loc>https://klarweg.in/a1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/a2.html</loc>
+    <loc>https://klarweg.in/a2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/b1.html</loc>
+    <loc>https://klarweg.in/b1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/b2.html</loc>
+    <loc>https://klarweg.in/b2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/c1.html</loc>
+    <loc>https://klarweg.in/c1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/c2.html</loc>
+    <loc>https://klarweg.in/c2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-grammar.html</loc>
+    <loc>https://klarweg.in/german-grammar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/der-die-das.html</loc>
+    <loc>https://klarweg.in/grammar/der-die-das</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/akkusativ.html</loc>
+    <loc>https://klarweg.in/grammar/akkusativ</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/dativ.html</loc>
+    <loc>https://klarweg.in/grammar/dativ</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/chapter/chapter-a1-1-alphabet.html</loc>
+    <loc>https://klarweg.in/chapter/chapter-a1-1-alphabet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/chapter/chapter-a2-1-genitiv.html</loc>
+    <loc>https://klarweg.in/chapter/chapter-a2-1-genitiv</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/chapter/chapter-b1-1-infinitiv-mit-zu.html</loc>
+    <loc>https://klarweg.in/chapter/chapter-b1-1-infinitiv-mit-zu</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/chapter/chapter-b2-01-erweiterte-satzklammer.html</loc>
+    <loc>https://klarweg.in/chapter/chapter-b2-01-erweiterte-satzklammer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/chapter/chapter-c1-01-tempusgebrauch-stilistische-tempuswahl.html</loc>
+    <loc>https://klarweg.in/chapter/chapter-c1-01-tempusgebrauch-stilistische-tempuswahl</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/chapter/chapter-c2-01-zeitformen-der-verben.html</loc>
+    <loc>https://klarweg.in/chapter/chapter-c2-01-zeitformen-der-verben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/a1-exam.html</loc>
+    <loc>https://klarweg.in/goethe/a1-exam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/b2-exam-preparation.html</loc>
+    <loc>https://klarweg.in/goethe/b2-exam-preparation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/c1-exam-preparation.html</loc>
+    <loc>https://klarweg.in/goethe/c1-exam-preparation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/c2-exam-preparation.html</loc>
+    <loc>https://klarweg.in/goethe/c2-exam-preparation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/b1-schreiben.html</loc>
+    <loc>https://klarweg.in/goethe/b1-schreiben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/b2-schreiben.html</loc>
+    <loc>https://klarweg.in/goethe/b2-schreiben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/b1-sprechen.html</loc>
+    <loc>https://klarweg.in/goethe/b1-sprechen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/b2-sprechen.html</loc>
+    <loc>https://klarweg.in/goethe/b2-sprechen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/exam-modules-retake.html</loc>
+    <loc>https://klarweg.in/goethe/exam-modules-retake</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/paper-vs-digital-exam.html</loc>
+    <loc>https://klarweg.in/goethe/paper-vs-digital-exam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-certificate-ausbildung.html</loc>
+    <loc>https://klarweg.in/german-certificate-ausbildung</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-certificate-study-germany.html</loc>
+    <loc>https://klarweg.in/german-certificate-study-germany</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/b1-exam.html</loc>
+    <loc>https://klarweg.in/goethe/b1-exam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/exam-fees-registration-india.html</loc>
+    <loc>https://klarweg.in/goethe/exam-fees-registration-india</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-course-cost-india.html</loc>
+    <loc>https://klarweg.in/german-course-cost-india</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/word-order.html</loc>
+    <loc>https://klarweg.in/grammar/word-order</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/prepositions.html</loc>
+    <loc>https://klarweg.in/grammar/prepositions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/a2-exam.html</loc>
+    <loc>https://klarweg.in/goethe/a2-exam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/perfekt.html</loc>
+    <loc>https://klarweg.in/grammar/perfekt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-for-nursing-germany.html</loc>
+    <loc>https://klarweg.in/german-for-nursing-germany</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/modalverben.html</loc>
+    <loc>https://klarweg.in/grammar/modalverben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/adjektivdeklination.html</loc>
+    <loc>https://klarweg.in/grammar/adjektivdeklination</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/trennbare-verben.html</loc>
+    <loc>https://klarweg.in/grammar/trennbare-verben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/konjunktiv-2.html</loc>
+    <loc>https://klarweg.in/grammar/konjunktiv-2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/passiv.html</loc>
+    <loc>https://klarweg.in/grammar/passiv</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/nicht-kein.html</loc>
+    <loc>https://klarweg.in/grammar/nicht-kein</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/relativsaetze.html</loc>
+    <loc>https://klarweg.in/grammar/relativsaetze</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/genitiv.html</loc>
+    <loc>https://klarweg.in/grammar/genitiv</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/komparativ.html</loc>
+    <loc>https://klarweg.in/grammar/komparativ</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/reflexive-verben.html</loc>
+    <loc>https://klarweg.in/grammar/reflexive-verben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/praeteritum.html</loc>
+    <loc>https://klarweg.in/grammar/praeteritum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/uhrzeit.html</loc>
+    <loc>https://klarweg.in/grammar/uhrzeit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/weil-denn-deshalb.html</loc>
+    <loc>https://klarweg.in/grammar/weil-denn-deshalb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/imperativ.html</loc>
+    <loc>https://klarweg.in/grammar/imperativ</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/possessivartikel.html</loc>
+    <loc>https://klarweg.in/grammar/possessivartikel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/zahlen.html</loc>
+    <loc>https://klarweg.in/grammar/zahlen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/als-wenn.html</loc>
+    <loc>https://klarweg.in/grammar/als-wenn</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/infinitiv-mit-zu.html</loc>
+    <loc>https://klarweg.in/grammar/infinitiv-mit-zu</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/verben-mit-praepositionen.html</loc>
+    <loc>https://klarweg.in/grammar/verben-mit-praepositionen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/w-fragen.html</loc>
+    <loc>https://klarweg.in/grammar/w-fragen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/dass.html</loc>
+    <loc>https://klarweg.in/grammar/dass</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/futur-1.html</loc>
+    <loc>https://klarweg.in/grammar/futur-1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/plusquamperfekt.html</loc>
+    <loc>https://klarweg.in/grammar/plusquamperfekt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/n-deklination.html</loc>
+    <loc>https://klarweg.in/grammar/n-deklination</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/datum.html</loc>
+    <loc>https://klarweg.in/grammar/datum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/liegen-legen.html</loc>
+    <loc>https://klarweg.in/grammar/liegen-legen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/zweiteilige-konnektoren.html</loc>
+    <loc>https://klarweg.in/grammar/zweiteilige-konnektoren</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/indefinitpronomen.html</loc>
+    <loc>https://klarweg.in/grammar/indefinitpronomen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/praesens.html</loc>
+    <loc>https://klarweg.in/grammar/praesens</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/alphabet.html</loc>
+    <loc>https://klarweg.in/grammar/alphabet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/temporale-nebensaetze.html</loc>
+    <loc>https://klarweg.in/grammar/temporale-nebensaetze</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/doch.html</loc>
+    <loc>https://klarweg.in/grammar/doch</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/grammar/index.html</loc>
+    <loc>https://klarweg.in/grammar/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-books-for-beginners.html</loc>
+    <loc>https://klarweg.in/german-books-for-beginners</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/free-german-learning-pdfs.html</loc>
+    <loc>https://klarweg.in/free-german-learning-pdfs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-exam-practice-papers.html</loc>
+    <loc>https://klarweg.in/german-exam-practice-papers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/learn-german-from-hindi.html</loc>
+    <loc>https://klarweg.in/learn-german-from-hindi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-a1-vocabulary.html</loc>
+    <loc>https://klarweg.in/german-a1-vocabulary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/a1-sprechen.html</loc>
+    <loc>https://klarweg.in/goethe/a1-sprechen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/a2-sprechen.html</loc>
+    <loc>https://klarweg.in/goethe/a2-sprechen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/a1-schreiben.html</loc>
+    <loc>https://klarweg.in/goethe/a1-schreiben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/goethe/a2-schreiben.html</loc>
+    <loc>https://klarweg.in/goethe/a2-schreiben</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-a2-vocabulary.html</loc>
+    <loc>https://klarweg.in/german-a2-vocabulary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-b1-vocabulary.html</loc>
+    <loc>https://klarweg.in/german-b1-vocabulary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://klarweg.in/german-a1-for-spouse-visa.html</loc>
+    <loc>https://klarweg.in/german-a1-for-spouse-visa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
